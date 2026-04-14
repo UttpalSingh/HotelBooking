@@ -9,3 +9,17 @@ body{
   font-family: font1;
   src: url(../public/fonts/IBMPlexSans-Italic-VariableFont_wdth\,wght.ttf);
 }
+.booking-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.booking-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.booking-item:nth-child(2) { transition-delay: 0.1s; }
+.booking-item:nth-child(3) { transition-delay: 0.2s; }
+.booking-item:nth-child(4) { transition-delay: 0.3s; }
