@@ -1,7 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Booking = () => {
   const bookingRef = useRef(null);
+
+  const [Input, setInput] = useState({
+    arrivalDate: "",
+    departureDate: "",
+    date: "",
+  });
+
+  function storeData(e) {
+    setInput({
+      ...Input,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function formSubmit(e) {
+    e.preventDefault;
+    setInput({
+      arrivalDate: "",
+      departureDate: "",
+      guest: "",
+    });
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,7 +45,7 @@ const Booking = () => {
   }, []);
 
   return (
-    <div className="h-screen">
+    <form onSubmit={formSubmit} className="">
       <div
         ref={bookingRef}
         className="flex justify-center gap-24 w-[80%] mx-auto"
@@ -31,6 +53,9 @@ const Booking = () => {
         <div className="flex flex-col gap-3">
           <label className="text-white text-xl">Arrival Date</label>
           <input
+            name="arrivalDate"
+            value={Input.arrivalDate}
+            onChange={storeData}
             type="text"
             placeholder="Enter Arrival Date"
             className="bg-transparent border-b border-white/50 text-white outline-none"
@@ -42,6 +67,9 @@ const Booking = () => {
             Departure Date
           </label>
           <input
+            name="departureDate"
+            value={Input.departureDate}
+            onChange={storeData}
             type="text"
             placeholder="Enter Departure Date"
             className="className='bg-transparent border-b border-white/50 text-white outline-none"
@@ -51,6 +79,9 @@ const Booking = () => {
         <div className="booking-item flex flex-col gap-3">
           <label className="text-white text-xl tracking-wide">Guest</label>
           <input
+            name="guest"
+            value={Input.guest}
+            onChange={storeData}
             type="text"
             placeholder="Number Of Guest"
             className="className='bg-transparent border-b border-white/50 text-white outline-none"
@@ -63,7 +94,7 @@ const Booking = () => {
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
