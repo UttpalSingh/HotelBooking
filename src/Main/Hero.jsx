@@ -7,6 +7,7 @@ import Card from "../components/card/Card";
 import Rooms from "../components/rooms/Rooms";
 import Info from "../components/Info/Info";
 import Facilities from "../components/facilities/Facilities";
+import Food from "../components/menu/Food";
 
 const Hero = () => {
   return (
@@ -31,7 +32,10 @@ const Hero = () => {
       
       {/* VideoSection */}
       <Info/>
+      {/* FacilitiesSection */}
       <Facilities/>
+
+      <Food/>
 
     </div>
   );
