@@ -156,3 +156,72 @@ body{
 .facility-card:nth-child(4) { transition-delay: 0.4s; }
 .facility-card:nth-child(5) { transition-delay: 0.5s; }
 .facility-card:nth-child(6) { transition-delay: 0.6s; }
+
+.food-heading {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.food-subheading {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.food-heading.visible,
+.food-subheading.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* left column items slide from left */
+.menu-item-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.menu-item-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* right column items slide from right */
+.menu-item-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.menu-item-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* stagger left column */
+.menu-item-left:nth-child(1) { transition-delay: 0.1s; }
+.menu-item-left:nth-child(2) { transition-delay: 0.25s; }
+.menu-item-left:nth-child(3) { transition-delay: 0.4s; }
+
+/* stagger right column */
+.menu-item-right:nth-child(1) { transition-delay: 0.15s; }
+.menu-item-right:nth-child(2) { transition-delay: 0.3s; }
+.menu-item-right:nth-child(3) { transition-delay: 0.45s; }
+
+/* bottom images rise up */
+.food-img {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.food-img:nth-child(1) { transition-delay: 0.1s; }
+.food-img:nth-child(2) { transition-delay: 0.25s; }
+.food-img:nth-child(3) { transition-delay: 0.4s; }
+
+.food-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
