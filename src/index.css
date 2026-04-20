@@ -119,3 +119,40 @@ body{
   opacity: 1;
   transform: translate(-50%, -50%);
 }
+.facilities-heading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.facilities-subheading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.facilities-heading.visible,
+.facilities-subheading.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.facility-card {
+  opacity: 0;
+  transform: perspective(600px) rotateX(30deg) translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.facility-card.visible {
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg) translateY(0);
+}
+
+/* stagger each card */
+.facility-card:nth-child(1) { transition-delay: 0.1s; }
+.facility-card:nth-child(2) { transition-delay: 0.2s; }
+.facility-card:nth-child(3) { transition-delay: 0.3s; }
+.facility-card:nth-child(4) { transition-delay: 0.4s; }
+.facility-card:nth-child(5) { transition-delay: 0.5s; }
+.facility-card:nth-child(6) { transition-delay: 0.6s; }
