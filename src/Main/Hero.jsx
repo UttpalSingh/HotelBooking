@@ -4,6 +4,9 @@ import Img from "../components/ImageArea/Img";
 import TextArea from "../components/TextArea/TextArea";
 import Booking from "../components/Booking/Booking";
 import Card from "../components/card/Card";
+import Rooms from "../components/rooms/Rooms";
+import Info from "../components/Info/Info";
+import Facilities from "../components/facilities/Facilities";
 
 const Hero = () => {
   return (
@@ -22,6 +25,13 @@ const Hero = () => {
 
       {/* CardSection */}
       <Card/>
+      
+      {/* RoomsSection */}
+      <Rooms/>
+      
+      {/* VideoSection */}
+      <Info/>
+      <Facilities/>
 
     </div>
   );

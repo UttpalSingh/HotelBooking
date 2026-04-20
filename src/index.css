@@ -59,3 +59,63 @@ body{
   opacity: 1;
   transform: translateX(0);
 }
+
+.rooms-heading {
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rooms-subheading {
+  opacity: 0;
+  transform: translateY(-16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.room-card {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.room-card:nth-child(1) { transition-delay: 0.15s; }
+.room-card:nth-child(2) { transition-delay: 0.3s;  }
+.room-card:nth-child(3) { transition-delay: 0.45s; }
+
+.rooms-heading.visible,
+.rooms-subheading.visible,
+.room-card.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.hero-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: 0.1s;
+}
+
+.hero-video {
+  opacity: 0;
+  transform: translate(-50%, -65%);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: 0.3s;
+}
+
+.hero-left.visible,
+.hero-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-video.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
