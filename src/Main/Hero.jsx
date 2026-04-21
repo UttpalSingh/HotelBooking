@@ -8,6 +8,7 @@ import Rooms from "../components/rooms/Rooms";
 import Info from "../components/Info/Info";
 import Facilities from "../components/facilities/Facilities";
 import Food from "../components/menu/Food";
+import FooterSection from "../components/footer/FooterSection";
 
 const Hero = () => {
   return (
@@ -34,9 +35,10 @@ const Hero = () => {
       <Info/>
       {/* FacilitiesSection */}
       <Facilities/>
-
+      {/* MenuSection */}
       <Food/>
 
+      <FooterSection/>
     </div>
   );
 };
