@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Img from "../components/ImageArea/Img";
 import TextArea from "../components/TextArea/TextArea";
@@ -11,6 +11,8 @@ import Food from "../components/menu/Food";
 import FooterSection from "../components/footer/FooterSection";
 
 const Hero = () => {
+  const cardRef = useRef(null)
+
   return (
     <div className="h-screen relative">
       {/* main */}
@@ -20,13 +22,17 @@ const Hero = () => {
       <Navbar />
 
       {/* textArea */}
-      <TextArea />
+      <TextArea scrollToCard={() =>{
+        cardRef.current?.scrollIntoView({ behavior: "smooth" });
+      }} />
 
       {/* bookingSection */}
       <Booking />
 
       {/* CardSection */}
-      <Card/>
+      <div ref={cardRef}>
+        <Card/>
+      </div>
       
       {/* RoomsSection */}
       <Rooms/>

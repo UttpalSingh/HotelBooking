@@ -6,8 +6,9 @@ const Booking = () => {
   const [Input, setInput] = useState({
     arrivalDate: "",
     departureDate: "",
-    date: "",
+    guest: "",
   });
+  const [myData, setMyData] = useState([]);
 
   function storeData(e) {
     setInput({
@@ -17,7 +18,14 @@ const Booking = () => {
   }
 
   function formSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
+
+    setMyData((prev) => {
+      const Data = [...prev, Input];
+      return Data;
+    });
+
+    console.log(myData);
     setInput({
       arrivalDate: "",
       departureDate: "",
@@ -72,7 +80,7 @@ const Booking = () => {
             onChange={storeData}
             type="text"
             placeholder="Enter Departure Date"
-            className="className='bg-transparent border-b border-white/50 text-white outline-none"
+            className="className=bg-transparent border-b border-white/50 text-white outline-none"
           />
         </div>
 
@@ -84,14 +92,28 @@ const Booking = () => {
             onChange={storeData}
             type="text"
             placeholder="Number Of Guest"
-            className="className='bg-transparent border-b border-white/50 text-white outline-none"
+            className="className=bg-transparent border-b border-white/50 text-white outline-none"
           />
         </div>
 
-        <div className="booking-item flex items-end">
-          <button className="border border-white/60 text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition cursor-pointer">
+        <div className="booking-item flex flex-col items-center gap-3">
+          <button
+            className="
+    border border-white/60 text-white 
+    px-6 py-2 rounded-full 
+    hover:bg-white hover:text-black 
+    transition cursor-pointer
+  "
+          >
             Check
           </button>
+
+          <div className="min-h-[24px] text-white">
+            {myData.length > 0 &&
+              myData.map((elem, index) => (
+                <h1 key={index}>Rooms Are Available</h1>
+              ))}
+          </div>
         </div>
       </div>
     </form>

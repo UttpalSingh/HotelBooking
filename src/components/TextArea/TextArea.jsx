@@ -3,7 +3,7 @@ import  { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 
-const TextArea = () => {
+const TextArea = ({scrollToCard}) => {
       const container = useRef(null)
     
       useGSAP(()=>{
@@ -23,7 +23,7 @@ const TextArea = () => {
         </h1>
         <p className="mt-3 text-lg">Luxury • Comfort • Experience</p>
 
-        <button className="py-3 px-5 m-2 bg-[#ffd60a] rounded cursor-pointer hover:scale-95 font-bold">Take A Tour</button>
+        <button onClick={scrollToCard} className="py-3 px-5 m-2 bg-[#ffd60a] rounded cursor-pointer hover:scale-95 font-bold">Take A Tour</button>
       </div>
       
     </div>
